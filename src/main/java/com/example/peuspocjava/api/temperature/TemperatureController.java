@@ -26,24 +26,29 @@ public class TemperatureController {
     private final PageTemperatureDtoMapper pageTemperatureDtoMapper;
 
     @GetMapping
-    public ResponseEntity<PageTemperatureDto> getTemperatures(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "3") int size
-    ) {
-        Pageable pageable = PageRequest.of(page, size);
-
-        PageTemperatureDto pageTemperatures;
-
-        pageTemperatures = pageTemperatureDtoMapper.toPageDto(temperatureService.findAll(pageable));
-
-        return ResponseEntity.ok(pageTemperatures);
+    public String getPressure() {
+        return "pressure";
     }
 
-    @GetMapping(path = "/{temperatureId}")
-    public ResponseEntity<TemperatureDto> geTemperature(@PathVariable Long temperatureId) {
-        Temperature temperature = temperatureService.findById(temperatureId);
-        return ResponseEntity
-                .ok(temperatureDtoMapper.toDto(temperature));
-    }
+//    @GetMapping
+//    public ResponseEntity<PageTemperatureDto> getTemperatures(
+//            @RequestParam(defaultValue = "0") int page,
+//            @RequestParam(defaultValue = "3") int size
+//    ) {
+//        Pageable pageable = PageRequest.of(page, size);
+//
+//        PageTemperatureDto pageTemperatures;
+//
+//        pageTemperatures = pageTemperatureDtoMapper.toPageDto(temperatureService.findAll(pageable));
+//
+//        return ResponseEntity.ok(pageTemperatures);
+//    }
+//
+//    @GetMapping(path = "/{temperatureId}")
+//    public ResponseEntity<TemperatureDto> geTemperature(@PathVariable Long temperatureId) {
+//        Temperature temperature = temperatureService.findById(temperatureId);
+//        return ResponseEntity
+//                .ok(temperatureDtoMapper.toDto(temperature));
+//    }
 
 }
