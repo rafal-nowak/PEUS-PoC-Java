@@ -26,8 +26,8 @@ public class TemperatureController {
     private final PageTemperatureDtoMapper pageTemperatureDtoMapper;
 
     @GetMapping
-    public String getPressure() {
-        return "pressure";
+    public String getHumidity() {
+        return "humidity";
     }
 
 //    @GetMapping
