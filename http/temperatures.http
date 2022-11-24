@@ -5,4 +5,4 @@ GET http://localhost:8080/api/v1/temperatures
 GET http://localhost:8080/api/v1/temperatures?page=0&size=10
 
 ### get temperature
-GET http://localhost:8080/api/v1/temperatures/1
+GET http://localhost:8080/api/v1/temperatures/100
